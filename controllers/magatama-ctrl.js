@@ -1,5 +1,4 @@
 const Magatama = require('../magatamas/magatama-model')
-const magatamaDB = require('../database')
 
 createMagatama = (req, res) => {
     const body = req.body
