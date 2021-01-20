@@ -7,13 +7,12 @@ const app = express();
 const bodyParser = require('body-parser')
 const cors = require('cors')
 var port = process.env.PORT || 4000;
-var mongoDBUrl = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/Magatamas'
+var mongoDBUrl = process.env.MONGODB_URI || "mongodb+srv://DemiFiendOutlaw:7qwzlrC8rjazeK3J@magatama-server.pgbzw.mongodb.net/Magatamas?retryWrites=true&w=majority" || 'mongodb://127.0.0.1:27017/Magatamas'
 const router = express.Router();
 const magatamaRouter = require('./route/magatama-router')
 const magatamaModel = require('./magatamas/magatama-model')
 const skillModel = require('./magatamas/skill-model')
 const magatamaCtrl = require('./controllers/magatama-ctrl')
-
 
 
 mongoose
@@ -24,7 +23,6 @@ mongoose
 
 
 const connection = mongoose.connection;
-
 app.use(bodyParser.json())
 app.use(cors())
 
